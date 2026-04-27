@@ -136,7 +136,6 @@ function buildSummary(programName, pct, reqs) {
  * Auto-detect the best-fit program based on which program has the highest completion %.
  */
 export function detectBestFitProgram(hccCourses, usfCourses, apScores) {
-  const { PROGRAMS } = await import('../data/programs')
   let best = null
   let bestPct = -1
   for (const prog of PROGRAMS) {
