@@ -2,6 +2,7 @@ export const PROGRAMS = [
   {
     id: "as-computer-information-technology",
     name: "AS Computer Information Technology",
+    hccUrl: "https://www.hcfl.edu/academics/subjects/information-technology/computer-information-technology",
     totalCredits: 60,
     requirements: [
       {
@@ -175,6 +176,7 @@ export const PROGRAMS = [
   {
     id: "aa-entrepreneurship",
     name: "AA Entrepreneurship Pathway",
+    hccUrl: "https://www.hcfl.edu/academics/subjects/accounting-and-business/entrepreneurship-aa-pathway",
     totalCredits: 60,
     requirements: [
       {
@@ -338,6 +340,7 @@ export const PROGRAMS = [
   {
     id: "aa-public-health",
     name: "AA Public Health Pathway",
+    hccUrl: "https://www.hcfl.edu/academics/subjects/health-sciences/public-health-aa-pathway",
     totalCredits: 60,
     requirements: [
       {

@@ -97,7 +97,7 @@ export default function LandingPage({ onGetStarted }) {
           {[
             ['Do USF courses count toward my HCC degree?', "Yes — Florida's Common Course Numbering System means the same course number transfers 1:1 between state schools."],
             ['Which AP scores count?', 'Any score of 3, 4, or 5. We follow Florida SBE Rule 6A-10.0315, the official AP credit policy for all Florida state colleges.'],
-            ['Which programs are supported?', 'AS Computer Science, AA General Studies, AS Business Administration, and AS Engineering Technology. More coming soon.'],
+            ['Which programs are supported?', 'AS Computer Information Technology, AA Entrepreneurship Pathway, and AA Public Health Pathway. More HCC programs coming soon.'],
             ['Is my data private?', 'Your course data is saved to your account only — never shared or sold.'],
           ].map(([q, a], i) => (
             <div key={i} className="py-5">

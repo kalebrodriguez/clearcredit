@@ -8,9 +8,8 @@ import DashboardPage from './pages/DashboardPage'
 
 export default function App() {
   const { user, loading, signOut } = useAuth()
-  const { profile, saveProfile } = useProfile(user)
+  const { profile, saving, saveProfile } = useProfile(user)
   const [showAuth, setShowAuth] = useState(false)
-  const [editing, setEditing] = useState(false)
 
   if (loading) {
     return (
@@ -25,14 +24,11 @@ export default function App() {
     return <LandingPage onGetStarted={() => setShowAuth(true)} />
   }
 
-  if (!profile.programId || editing) {
+  if (!profile.programId) {
     return (
       <OnboardingPage
         initialProfile={profile}
-        onComplete={async (updates) => {
-          await saveProfile(updates)
-          setEditing(false)
-        }}
+        onComplete={saveProfile}
       />
     )
   }
@@ -41,8 +37,9 @@ export default function App() {
     <DashboardPage
       profile={profile}
       user={user}
-      onEdit={() => setEditing(true)}
       onSignOut={signOut}
+      saveProfile={saveProfile}
+      saving={saving}
     />
   )
 }
