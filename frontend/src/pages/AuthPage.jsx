@@ -1,6 +1,6 @@
 import { useAuth } from '../hooks/useAuth'
 
-export default function AuthPage() {
+export default function AuthPage({ onDevLogin }) {
   const { signInWithGoogle } = useAuth()
 
   return (
@@ -34,6 +34,17 @@ export default function AuthPage() {
         <p className="text-xs text-zinc-700 mt-6">
           We never share your data.
         </p>
+
+        {onDevLogin && (
+          <div className="mt-6 pt-5 border-t border-zinc-800">
+            <button
+              onClick={onDevLogin}
+              className="w-full text-xs text-zinc-600 hover:text-zinc-400 transition-colors py-1"
+            >
+              ⚡ Dev: skip login
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )

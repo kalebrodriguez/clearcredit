@@ -147,3 +147,17 @@ export function detectBestFitProgram(hccCourses, usfCourses, apScores) {
   }
   return best
 }
+
+/**
+ * Return the top N programs by completion %, for the "pick my best fit" feature.
+ * Ties broken by absolute credits earned.
+ */
+export function getTopPrograms(hccCourses, usfCourses, apScores, n = 3) {
+  return PROGRAMS
+    .map(prog => {
+      const result = runAudit(prog.id, hccCourses, usfCourses, apScores)
+      return { programId: prog.id, programName: prog.name, programType: prog.type, ...result }
+    })
+    .sort((a, b) => b.completionPct - a.completionPct || b.totalCreditsEarned - a.totalCreditsEarned)
+    .slice(0, n)
+}
